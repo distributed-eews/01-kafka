@@ -10,7 +10,7 @@ services:
       - '29092:29092'
     environment:
       KAFKA_BROKER_ID: 1
-      KAFKA_ZOOKEEPER_CONNECT: '<zookeper-ip>:<zookeper-port>'
+      KAFKA_ZOOKEEPER_CONNECT: '<zookeper1-ip>:<zookeper1-port>,<zookeper2-ip>:<zookeper2-port>'
       KAFKA_LISTENERS: DOCKER://kafka1:9092,LOCAL://kafka1:19092,OUTSIDE://kafka1:290921
       KAFKA_ADVERTISED_LISTENERS: DOCKER://kafka1:9092,LOCAL://localhost:19092,OUTSIDE://<ip-vm>:29092
       KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: DOCKER:PLAINTEXT,LOCAL:PLAINTEXT,OUTSIDE:PLAINTEXT
@@ -28,7 +28,7 @@ services:
   #     - '29093:29092'
   #   environment:
   #     KAFKA_BROKER_ID: 2
-  #     KAFKA_ZOOKEEPER_CONNECT: '<zookeper-ip>:<zookeper-port>'
+  #     KAFKA_ZOOKEEPER_CONNECT: '<zookeper1-ip>:<zookeper1-port>,<zookeper2-ip>:<zookeper2-port>'
   #     KAFKA_LISTENERS: DOCKER://kafka2:9092,LOCAL://kafka2:19092,OUTSIDE://kafka2:290921
   #     KAFKA_ADVERTISED_LISTENERS: DOCKER://kafka2:9092,LOCAL://localhost:19092,OUTSIDE://<ip-vm>:29092
   #     KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: DOCKER:PLAINTEXT,LOCAL:PLAINTEXT,OUTSIDE:PLAINTEXT
