@@ -4,8 +4,6 @@ services:
     restart: always
     container_name: kafka1
     image: confluentinc/cp-kafka
-    depends_on:
-      - eews-zookeeper
     ports:
       - '29092:29092'
     environment:
@@ -22,8 +20,6 @@ services:
   #   restart: always
   #   container_name: kafka2
   #   image: confluentinc/cp-kafka
-  #   depends_on:
-  #     - eews-zookeeper
   #   ports:
   #     - '29093:29092'
   #   environment:
