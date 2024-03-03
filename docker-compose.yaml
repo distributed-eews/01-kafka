@@ -15,19 +15,3 @@ services:
       KAFKA_INTER_BROKER_LISTENER_NAME: DOCKER
       KAFKA_AUTO_CREATE_TOPICS_ENABLE: 'false'
     mem_limit: 1.2g
-
-  # kafka2:
-  #   restart: always
-  #   container_name: kafka2
-  #   image: confluentinc/cp-kafka
-  #   ports:
-  #     - '29093:29092'
-  #   environment:
-  #     KAFKA_BROKER_ID: 2
-  #     KAFKA_ZOOKEEPER_CONNECT: '<zookeper1-ip>:<zookeper1-port>,<zookeper2-ip>:<zookeper2-port>'
-  #     KAFKA_LISTENERS: DOCKER://kafka2:9092,LOCAL://kafka2:19092,OUTSIDE://kafka2:29092
-  #     KAFKA_ADVERTISED_LISTENERS: DOCKER://kafka2:9092,LOCAL://localhost:19092,OUTSIDE://<ip-vm>:29092
-  #     KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: DOCKER:PLAINTEXT,LOCAL:PLAINTEXT,OUTSIDE:PLAINTEXT
-  #     KAFKA_INTER_BROKER_LISTENER_NAME: DOCKER
-  #     KAFKA_AUTO_CREATE_TOPICS_ENABLE: 'false'
-  #   mem_limit: 1.2g
