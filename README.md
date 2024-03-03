@@ -47,3 +47,8 @@ Untuk mendeploy lebih dari satu Kafka broker menggunakan Docker Compose, Anda pe
 - Untuk setiap broker baru, ubah `container_name`, `KAFKA_BROKER_ID`, dan sesuaikan port mapping.
 
 Pastikan untuk mengupdate firewall dan konfigurasi jaringan VM sesuai dengan port yang digunakan oleh setiap Kafka broker untuk memastikan komunikasi yang lancar.
+
+## Catatan
+
+- Pastikan konfigurasi pada `KAFKA_ADVERTISED_LISTENERS` tidak ada yang sama di broker lainnya.
+  - Misal di broker 1 terdapat value `DOCKER://kafka1:9092` maka tidak boleh ada lagi value tersebut di broker lainnya.

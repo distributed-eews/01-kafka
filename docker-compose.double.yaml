@@ -1,32 +1,32 @@
 version: '3'
 services:
-  kafka1:
-    restart: always
-    container_name: kafka1
-    image: confluentinc/cp-kafka
-    ports:
-      - '29092:29092'
-    environment:
-      KAFKA_BROKER_ID: 1
-      KAFKA_ZOOKEEPER_CONNECT: '<zookeper1-ip>:<zookeper1-port>,<zookeper2-ip>:<zookeper2-port>'
-      KAFKA_LISTENERS: DOCKER://kafka1:9092,LOCAL://kafka1:19092,OUTSIDE://kafka1:29092
-      KAFKA_ADVERTISED_LISTENERS: DOCKER://kafka1:9092,LOCAL://localhost:19092,OUTSIDE://<ip-vm>:29092
-      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: DOCKER:PLAINTEXT,LOCAL:PLAINTEXT,OUTSIDE:PLAINTEXT
-      KAFKA_INTER_BROKER_LISTENER_NAME: DOCKER
-      KAFKA_AUTO_CREATE_TOPICS_ENABLE: 'false'
-    mem_limit: 1.2g
-
   kafka2:
     restart: always
     container_name: kafka2
     image: confluentinc/cp-kafka
     ports:
-      - '29093:29092'
+      - '29092:29092'
     environment:
       KAFKA_BROKER_ID: 2
       KAFKA_ZOOKEEPER_CONNECT: '<zookeper1-ip>:<zookeper1-port>,<zookeper2-ip>:<zookeper2-port>'
       KAFKA_LISTENERS: DOCKER://kafka2:9092,LOCAL://kafka2:19092,OUTSIDE://kafka2:29092
       KAFKA_ADVERTISED_LISTENERS: DOCKER://kafka2:9092,LOCAL://localhost:19092,OUTSIDE://<ip-vm>:29092
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: DOCKER:PLAINTEXT,LOCAL:PLAINTEXT,OUTSIDE:PLAINTEXT
+      KAFKA_INTER_BROKER_LISTENER_NAME: DOCKER
+      KAFKA_AUTO_CREATE_TOPICS_ENABLE: 'false'
+    mem_limit: 1.2g
+
+  kafka3:
+    restart: always
+    container_name: kafka3
+    image: confluentinc/cp-kafka
+    ports:
+      - '29093:29093'
+    environment:
+      KAFKA_BROKER_ID: 3
+      KAFKA_ZOOKEEPER_CONNECT: '<zookeper1-ip>:<zookeper1-port>,<zookeper2-ip>:<zookeper2-port>'
+      KAFKA_LISTENERS: DOCKER://kafka3:9092,LOCAL://kafka3:19093,OUTSIDE://kafka3:29093
+      KAFKA_ADVERTISED_LISTENERS: DOCKER://kafka3:9092,LOCAL://localhost:19093,OUTSIDE://<ip-vm>:29093
       KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: DOCKER:PLAINTEXT,LOCAL:PLAINTEXT,OUTSIDE:PLAINTEXT
       KAFKA_INTER_BROKER_LISTENER_NAME: DOCKER
       KAFKA_AUTO_CREATE_TOPICS_ENABLE: 'false'
