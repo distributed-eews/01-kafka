@@ -27,7 +27,7 @@ Apache Kafka adalah sistem messaging yang terdistribusi dan dirancang untuk meny
 3. **Menjalankan Kafka**
 
    - Navigasikan ke direktori tempat file `docker-compose.yaml` berada.
-   - Jalankan perintah berikut untuk mendeploy Kafka dan Zookeeper:
+   - Jalankan perintah berikut untuk mendeploy Kafka:
 
      ```sh
      docker-compose up -d
